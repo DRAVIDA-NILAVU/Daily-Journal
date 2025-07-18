@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Simply Daily Journey ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #ffffffdd;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      backdrop-filter: blur(8px);
+      width: 300px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-family: 'Indie Flower', cursive;
+      font-size: 2.5rem;
+      color: #34495e;
+    }
+
+    .funny-text {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      color: #7f8c8d;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #f39c12;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #e67e22;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome Back 🐢</h2>
+    <div class="funny-text">Your journal misses you. It’s been gossiping without you 😆</div>
+    
+    <form onsubmit="return loginUser()">
+      <input type="text" id="username" placeholder="Your secret alias 🕵‍♂" required>
+      <input type="password" id="password" placeholder="Your magic password 🔐" required>
+      <button type="submit">✨ Let Me In</button>
+    </form>
+
+    <div class="footer">Don't have an account? Pretend you do! 😉</div>
+  </div>
+
+  <script>
+    function loginUser() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user === "admin" && pass === "1234") {
+        alert("✨ Welcome, mighty journaler!");
+        window.location.href = "index.html";  // Redirect to main journal page
+        return false;
+      } else {
+        alert("🚫 Wrong details! Try again or bribe the login fairy.");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
